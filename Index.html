@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://res.cloudinary.com/dybluctxg/raw/upload/v1495309810/index_bp9czc.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="field" src="https://res.cloudinary.com/dybluctxg/image/upload/v1495307503/field_kcw4so.jpg"/>
+            <img id="photo" src="img/1560565_782499861825636_5942322296424206450_n.jpg"/>
+            <img id="floato" src="img/profile-cutout.png"/>
+            <img id="porto" src="img/layers.png"/>
+            <img id="twitter" src="https://res.cloudinary.com/dybluctxg/image/upload/v1495307560/twitter_wghtwy.png"/>
+            <img id="codepen" src="https://res.cloudinary.com/dybluctxg/image/upload/c_scale,w_64/v1495310388/Button-Black-Large_n8o5ix.png"/>
+            <img id="github" src="https://res.cloudinary.com/dybluctxg/image/upload/v1495310880/github_ipn5do.png"/>
+            <a-mixin class="links" id="social" geometry="primitive: circle; radius: 0.1" material="color: #fff; transparent: true"></a-mixin>
+        </a-assets>
+
+        <a-entity geometry="primitive: plane; width: 1.6; height: 2" material="color: #FFF" position="0 2 0"
+                  animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: 0 -0.10 -5; loop: true">
+            <a-image width="1.6" height="1.4" position="0 0.9 0.01" src="#photo"></a-image>
+           <a-image width="1.6" height="1.4" position="0 0.89 0.03" src="#floato"></a-image> ---->
+            <a-text value="Danny van den Munckhof" color="#4B5154" width="2.5" position="-0.65 0 0.01"></a-text>
+            <a-plane width="1.6" height="0.4" position="0 -0.35 0">
+                <a-text value="Designer and developer of neat stuff in Virtual Reality, trying to tear down the walls between the virtual and our physical reality." color="#697982" anchor="center" width="1.4"></a-text>
+            </a-plane>
+
+            <a-plane id="divider" width="1.5" height="0.01" position="0 -0.6 0.01" color="#697982" opacity="0.3"></a-plane>
+            <a-plane width="1.0" height="0.2" position="0.15 -0.8 0">
+                <a-entity mixin="social" material="src: #codepen" position="-0.3 0 0.01" href="https://codepen.io/dphlmunc/" target="#scale">
+                    <a-animation id="scale" attribute="scale" from="1 1 1" to="1.6 1.6 1.6" begin="href" dur="800" easing="ease-in"></a-animation>
+                </a-entity>
+
+                <a-entity mixin="social" material="src: #porto; color: #1DA1F2" position="-0.6 0 0.01" href="https://dphlmunc.github.io/Portfolio" target="_blank#scale">
+                    <a-animation id="scale" attribute="scale" from="1 1 1" to="2 2 2" begin="href" dur="800" easing="ease-in"></a-animation>
+                </a-entity>
+
+                <a-entity mixin="social" material="src: #twitter; color: #1DA1F2" position="0 0 0.01" href="https://twitter.com/munckhy/" target="_blank#scale">
+                    <a-animation id="scale" attribute="scale" from="1 1 1" to="1.6 1.6 1.6" begin="href" dur="800" easing="ease-in"></a-animation>
+                </a-entity>
+                <a-entity mixin="social" material="src: #github" position="0.3 0 0.01" href="https://github.com/dphlmunc/" target="_blank#scale">
+                    <a-animation id="scale" attribute="scale" from="1 1 1" to="1.6 1.6 1.6" begin="href" dur="800" easing="ease-in"></a-animation>
+                </a-entity>
+            </a-plane>
+
+            <!----- Backside --------->
+            <a-entity geometry="primitive: plane; width: 1.6; height: 1.0" material="color: #FFFFFF" position="0 -0.3 0" rotation="0 180 0">
+                <a-plane width="1.6" height="0.7" position="0 -0 0.01">
+                    <a-text value="I like your explorative style." color="#2E2E2E" anchor="center" width="1.4" position="0.33 0 0.01"></a-text>
+                </a-plane>
+            </a-entity>
+        </a-entity>
+
+
+        <a-sky radius="10" src="#field"></a-sky>
+        <a-entity camera="camera" look-controls="look-controls" wasd-controls="wasd-controls" position="0 2 1.8">
+            <a-cursor color="#FFF849" fuse="true"></a-cursor>
+        </a-entity>
+    </a-scene>
+</body>
+
+</body>
+</html>
